@@ -1,3 +1,39 @@
+
+
+/*
+
+const int ledPin = 13; 
+const int hallPin = 31;
+
+int sensorValue; 
+
+
+void setup(){
+  nrf_gpio_pin_dir_set(hallPin, NRF_GPIO_PIN_DIR_INPUT);
+  nrf_gpio_pin_dir_set(ledPin, NRF_GPIO_PIN_DIR_OUTPUT);
+
+}
+
+
+int main()
+  {
+    setup();
+    while (1)
+     {
+      // lecture du capteur a Effet Hall
+      sensorValue = nrf_gpio_pin_read(hallPin);
+  
+      // senseurValue = HIGH sans aimant
+      // senseurValue = LOW  quand POLE SUD aimant
+      sensorValue = !( sensorValue );
+  
+      // Allumer eteindre la LED
+      nrf_gpio_pin_write(ledPin, sensorValue);
+    }
+}
+*/
+
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
@@ -96,7 +132,7 @@ bool measure_distance2()
     nrf_gpio_pin_clear(pinTrig2);
     nrf_delay_us(20);
     while (!nrf_gpio_pin_read(pinEcho2));
-    tCount2 = 0;
+    tCount = 0;
     while (nrf_gpio_pin_read(pinEcho2));
     duration2 = countToUs * tCount;
     distance2 = duration2 * 0.017;
@@ -170,11 +206,21 @@ int main()
           printf("Distance 2 : %.2f cm\n",distance2);
           printf("Duration 2 : %.2f us\n",duration2);
         
-        wind_speed = (0.306/2) * ((1000000/duration)- (1000000/duration2));
-        float sonic_speed = (0.306/2) * ((1000000/duration) + (1000000/duration2));
+        wind_speed = (0.12/2) * ((1000000/duration)- (1000000/duration2));  //Distance of 12cm between the 2 sensors
+        float sonic_speed = (0.12/2) * ((1000000/duration) + (1000000/duration2));
         printf("Wind speed  : %f m/s \n",wind_speed);
-        printf("Sonic speed  : %f m/s \n",sonic_speed);*/
+        printf("Sonic speed  : %f m/s \n",sonic_speed);
         
         nrf_delay_ms(250);
     }
 }
+
+
+
+
+
+
+
+
+
+
