@@ -162,13 +162,14 @@ int main()
         printf("Duration 2 : %.2f us\n",duration2);
         
       
-
+        /*
         if (measure_distance())
           printf("Distance 1 : %.2f cm\n",distance);
           printf("Duration 1 : %.2f us\n",duration);
         if (measure_distance2())
           printf("Distance 2 : %.2f cm\n",distance2);
           printf("Duration 2 : %.2f us\n",duration2);
+        */
         
         wind_speed = (0.12/2) * ((1000000/duration)- (1000000/duration2));  //Distance of 12cm between the 2 sensors
         float sonic_speed = (0.12/2) * ((1000000/duration) + (1000000/duration2));
