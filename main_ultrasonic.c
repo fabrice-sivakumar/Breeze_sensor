@@ -1,39 +1,3 @@
-
-
-/*
-
-const int ledPin = 13; 
-const int hallPin = 31;
-
-int sensorValue; 
-
-
-void setup(){
-  nrf_gpio_pin_dir_set(hallPin, NRF_GPIO_PIN_DIR_INPUT);
-  nrf_gpio_pin_dir_set(ledPin, NRF_GPIO_PIN_DIR_OUTPUT);
-
-}
-
-
-int main()
-  {
-    setup();
-    while (1)
-     {
-      // lecture du capteur a Effet Hall
-      sensorValue = nrf_gpio_pin_read(hallPin);
-  
-      // senseurValue = HIGH sans aimant
-      // senseurValue = LOW  quand POLE SUD aimant
-      sensorValue = !( sensorValue );
-  
-      // Allumer eteindre la LED
-      nrf_gpio_pin_write(ledPin, sensorValue);
-    }
-}
-*/
-
-
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
