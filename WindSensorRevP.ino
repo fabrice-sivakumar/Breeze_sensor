@@ -25,7 +25,7 @@ const int TempPin = A2;   // temp sesnsor analog pin hooked up to Wind P sensor 
 void setup() {
     Serial.begin(115200);
     pinMode(3,OUTPUT);
-    //digitalWrite(3, LOW);   // Should shut down the sensor
+    //digitalWrite(3, HIGH);   // Should shut down the sensor
     delay(1000); 
 }
 
@@ -34,10 +34,6 @@ void loop() {
     
     // read wind
 
-     digitalWrite(3, LOW);   // Should shut down the sensor
-    delay(1000); 
-     digitalWrite(3, HIGH);   // Should shut down the sensor
-    delay(1000); 
     int windADunits = analogRead(OutPin);
      Serial.print("RW ");   // print raw A/D for debug
      Serial.print(windADunits);
